@@ -168,14 +168,14 @@ namespace Inventory_Management
         public bool IsInt32(TextBox textBox, string name)
         {
             //Data validation for general use to see if a text box has an integer
-            int number = 0;
-            if (Int32.TryParse(textBox.Text, out number))
+
+            if (Int32.TryParse(textBox.Text, out var number))
             {
                 return true;
             }
             else
             {
-                MessageBox.Show(name + " must be an integer value.", "Entry Error");
+                MessageBox.Show(name + $"must be an integer value.", "Entry Error");
                 textBox.Focus();
                 return false;
             }
